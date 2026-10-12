@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment | Tuffy's Bookstore</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header with logo and naviagation buttons -->
+  <header>
+    <div class="logo">
+      <a href="">TUFFY'S BOOKSTORE 📚</a> 
+    </div>
+    <nav>
+      <ul>
+        <!-- naviagtion bar links and buttons -->
+        <li><a href="index.html">Home</a></li>
+        <li><a href="">About Us</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- main content area -->
+  <div class="main">
+    <div class="subtitleinfo">
+      <h1>Secure Payment</h1> <!-- Heading for payment section -->
+    </div>
+
+    <div class="middle">
+      <h2>Enter Credit Card Details</h2>
+
+      <!-- payment form -->
+      <!-- using onsubmit to run JS function -->
+      <form name="paymentForm" onsubmit="return validateForm()">
+
+        <!-- Card Number input -->
+        <label for="cardNumber">Card Number:</label>
+        <input type="text" id="cardNumber" maxlength="16" required>
+
+        <!-- Expiry month input -->
+        <label for="expMonth">Expiry Month (MM):</label>
+        <input type="number" id="expMonth" min="1" max="12" required>
+
+        <!-- Expiry year input -->
+        <label for="expYear">Expiry Year (YYYY):</label>
+        <input type="number" id="expYear" min="2024" required>
+
+        <!-- CVV code input -->
+        <label for="cvv">CVV Code:</label>
+        <input type="text" id="cvv" maxlength="3" required>
+
+        <!-- submit button -->
+        <button type="submit">Continue</button>
+      </form>
+
+      <!-- error message if things go wrong -->
+      <p id="errorMsg" style="color: red;"></p>
+
+      <!-- success message -->
+      <p id="successMsg" style="color: green;"></p>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer>
+    <p>&copy; 2025 Tuffy's Bookstore</p> <!-- footer copyright -->
+  </footer>
+
+  <!-- link to the JS file with form validation -->
+  <script src="payment.js"></script>
+</body>
+</html>

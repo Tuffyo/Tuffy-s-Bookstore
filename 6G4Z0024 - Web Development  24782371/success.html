@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment Success | Tuffy's Bookstore</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- header buttons and navigation menu -->
+  <header>
+    <div class="logo">
+      <a href="">TUFFY'S BOOKSTORE 📚</a> <!-- Main Logo -->
+    </div>
+    <nav>
+      <ul>
+        <!-- Navigation links and buttons to sections of the website -->
+        <li><a href="index.html">Home</a></li>
+        <li><a href="">About Us</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main content section -->
+  <div class="main">
+    <div class="subtitleinfo">
+      <h1>Payment Successful</h1> <!-- Page title -->
+    </div>
+
+    <div class="middle">
+      <h2>Thank you for your payment.</h2> <!-- Confirmation message for user -->
+      <p id="cardDisplay" style="font-size: 1.2em; margin-top: 20px;"></p> <!-- Display of card number ending -->
+    </div>
+  </div>
+
+  <!-- footer with copyright notice -->
+  <footer>
+    <p>&copy; 2025 Tuffy's Bookstore</p>
+  </footer>
+
+  <!-- JavaScript to extract the last 4 digits of the card number from the URL -->
+  <script>
+    // Retrieve query parameters from the current page's URL
+    const urlParams = new URLSearchParams(window.location.search);
+
+    // Extract the value of the "last4" parameter, which should be the final four digits of the card number
+    const last4 = urlParams.get("last4");
+
+    // Display the card number ending if valid, or a placeholder if unavailable
+    if (last4 && last4.length === 4) {
+      document.getElementById("cardDisplay").textContent = "Card: **** **** **** " + last4;
+    } else {
+      document.getElementById("cardDisplay").textContent = "Card: **** **** **** ????";
+    }
+  </script>
+
+</body>
+</html>
